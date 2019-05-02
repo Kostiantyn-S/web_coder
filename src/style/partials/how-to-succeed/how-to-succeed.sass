@@ -1,0 +1,85 @@
+.how-to-succeed
+  display: flex
+  justify-content: center
+
+  &__wrapper
+    width: 960px
+
+  &__title
+    font-family: $formFont
+    font-size: 31px
+    color: $howToSucceedFontColor
+    padding: 82px 0 23px 0
+
+  &__paragraph
+    font-family: $formFont
+    font-size: 14px
+    line-height: 22px
+    color: $howToSucceedFontColor
+    column-count: 3
+    column-gap: 30px
+    height: 360px
+    column-fill: auto
+
+    &_orange
+      color: #ffa352
+      line-height: 16px
+      display: block
+      border-left: 3px solid #ffa352
+      padding-left: 18px
+      margin: 32px 0
+
+    &_text
+      display: block
+      padding-bottom: 32px
+
+    &_number
+      font-size: 11px
+      color: #a3a3a3
+
+    & a
+      color: #ffaf69
+
+    &_more
+      color: #ffb575
+      margin-left: 120px
+      cursor: pointer
+      display: flex
+
+      &-arrow
+        display: block
+
+        &-rotate
+          transform: rotate(90deg)
+
+  &__quote
+    display: flex
+    padding: 32px 0
+
+    &-quotes
+      display: block
+      font-size: 60px
+      position: relative
+      top: 5px
+
+      &_close
+        top: 145px
+
+    &-text
+      display: block
+      padding: 0 7px
+      line-height: 16px
+      color: #9a9a9a
+      font-style: italic
+
+  &__subparagraph
+    font-family: $formFont
+    font-size: 14px
+    line-height: 22px
+    color: $howToSucceedFontColor
+    font-style: italic
+    display: none
+    padding: 30px
+
+    &_show
+      display: block

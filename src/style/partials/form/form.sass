@@ -1,0 +1,343 @@
+.form
+  width: 50%
+  background: $mainColor
+  padding: 28px 40px 0 20px
+  user-select: none
+
+  &__header
+    font-family: $formFont
+    font-size: 44px
+    color: #ff800c
+    padding-bottom: 31px
+    position: relative
+
+    &:after
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: linear-gradient(#fff, rgba(255,255,255,0))
+
+  &__titles-and-forms
+    display: flex
+
+    .form__titles
+      display: flex
+      flex-direction: column
+      padding-top: 7px
+      width: 100px
+
+      .form__title
+        font-family: $formFont
+        font-size: $formFontSize
+        color: $formFontColor
+        padding-bottom: 35px
+
+    .form__forms
+      width: 321px
+
+      &-gender
+        display: flex
+        align-items: center
+        height: 36px
+        position: relative
+        
+        &-radiobutton
+          display: none
+
+        &-radio-girl
+          cursor: pointer
+
+          .form__forms-gender-radiobutton:checked + .form__forms-gender-radio-girl-image:before
+            opacity: 1
+
+          &-image
+            position: relative
+            bottom: 18px
+
+            &:before
+              content: ''
+              position: absolute
+              width: 47px
+              height: 36px
+              background: url("../img/form/radio_girl_checked.png")
+              opacity: 0
+              z-index: 1
+
+            &:after
+              content: ''
+              position: absolute
+              width: 47px
+              height: 36px
+              background: url("../img/form/radio_girl.png")
+
+        &-radio-boy
+          margin-left: 47px
+          cursor: pointer
+
+          .form__forms-gender-radiobutton:checked + .form__forms-gender-radio-boy-image:before
+            opacity: 1
+
+          &-image
+            position: relative
+            bottom: 18px
+
+            &:before
+              content: ''
+              position: absolute
+              width: 47px
+              height: 36px
+              background: url("../img/form/radio_boy_checked.png")
+              opacity: 0
+              z-index: 1
+
+            &:after
+              content: ''
+              position: absolute
+              width: 47px
+              height: 36px
+              background: url("../img/form/radio_boy.png")
+
+        &-search
+          margin: 0 9px 0 60px
+
+        &-text
+          font-family: $formFont
+          font-size: $formFontSize
+          color: $formFontColor
+          margin-right: 15px
+
+      &-name
+        padding-top: 12px
+        display: flex
+        position: relative
+
+        &-input
+          width: 100%
+          height: 36px
+          border-radius: 18px
+          border: 1px solid $formInputBorderColor
+          font-family: $formFont
+          font-size: $formFontSize
+          color: $formFontColor
+          outline: none
+          padding-left: 15px
+          box-shadow: 0 1px 1px #000000 inset
+          background: #eceeee
+          cursor: pointer
+
+          &::placeholder
+            color: #939393
+
+      &-age
+        padding-top: 14px
+        display: flex
+        justify-content: space-between
+        position: relative
+
+        &-select
+          width: 84px
+          font-family: $formFont
+          font-size: $formFontSize
+          color: $formFontColor
+          position: relative
+
+          &-title
+            height: 36px
+            border-radius: 18px
+            border: 1px solid $formInputBorderColor
+            width: 100%
+            box-sizing: border-box
+            padding-right: 37px
+            text-align: center
+            font-family: $formFont
+            font-size: $formFontSize
+            color: $formFontColor
+            cursor: pointer
+            outline: none
+            box-shadow: 0 1px 1px #000000 inset
+
+          &-arrow
+            position: absolute
+            top: 0
+            right: 0
+            width: 37px
+            height: 36px
+            box-sizing: border-box
+            border: 1px solid $formInputBorderColor
+            border-top-right-radius: 18px
+            border-bottom-right-radius: 18px
+            pointer-events: none
+            background: #ebeded
+
+            &:after
+              content: ''
+              position: absolute
+              left: 11px
+              top: 14px
+              width: 0
+              height: 0
+              border-style: solid
+              border-width: 7px 4px 0 4px
+              border-color: $formFontColor transparent transparent transparent
+
+          &-list
+            list-style: none
+            display: none
+            position: absolute
+            z-index: 1000
+            background: #eceeee
+            width: 84px
+            height: 150px
+            padding: 10px
+            box-sizing: border-box
+            overflow-y: scroll
+            border-radius: 10px
+
+            &::-webkit-scrollbar
+              width: 12px
+
+            &::-webkit-scrollbar-track
+              -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+              border-radius: 10px
+
+            &::-webkit-scrollbar-thumb
+              border-radius: 10px
+              -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5)
+
+            & li
+              padding: 2px
+              cursor: pointer
+              text-align: center
+
+          .open
+            display: block
+
+        #month-select
+          width: 119px
+
+          #month-select-list
+            width: 119px
+
+        #year-select
+          width: 105px
+
+          #year-select-list
+            width: 105px
+
+      &-valid
+        position: absolute
+        left: 330px
+        top: 23px
+        display: none
+
+      &-invalid
+        position: absolute
+        left: 330px
+        top: 23px
+        display: none
+
+      &-invalid-popup
+        position: absolute
+        font-family: "Trebuchet MS Regular"
+        font-size: 16px
+        color: #ffffff
+        background: rgba(0, 0, 0, 0.7)
+        padding: 24px
+        border-radius: 5px
+        z-index: 1000
+        left: 360px
+        top: 0
+        width: max-content
+        display: none
+
+        &:before
+          content: ''
+          border: 9px solid transparent
+          border-right: 9px solid rgba(0, 0, 0, 0.7)
+          position: absolute
+          left: -18px
+          top: 23px
+
+      .show
+        display: block
+
+      &-city
+        padding-top: 14px
+
+        #city-select
+          width: 100%
+
+          #city-select-list
+            width: 100%
+
+      &-checkboxes
+        padding-top: 19px
+        display: flex
+
+        &-square
+          height: 48px
+          display: flex
+          flex-direction: column
+          justify-content: space-between
+
+        &-label
+          display: flex
+          cursor: pointer
+
+          &-input
+            display: none
+
+          &-checkbox
+            position: relative
+            width: 14px
+            height: 14px
+            box-sizing: border-box
+            border: 1px solid #a2a2a2
+            background-color: #eceeee
+
+          &-text
+            font-family: $formFont
+            font-size: $formFontSize
+            color: $formFontColor
+            padding-left: 14px
+
+          .form__forms-checkboxes-label-input:checked + .form__forms-checkboxes-label-checkbox:before
+            content: ""
+            display: block
+            position: absolute
+            top: 1px
+            right: 1px
+            bottom: 1px
+            left: 1px
+            background: #ff9e0f
+
+          &-checkbox_border-radius-50
+            border-radius: 50%
+
+            &:before
+              border-radius: 50%
+
+        &-round
+          height: 48px
+          display: flex
+          flex-direction: column
+          justify-content: space-between
+          padding-left: 72px
+
+  &__button
+    padding: 18px 0 0 100px
+
+    &-input
+      width: 320px
+      height: 70px
+      font-family: $formFont
+      font-size: 48px
+      color: #ffffff
+      border: 3px double #ffffff
+      border-radius: 35px
+      background: linear-gradient(to bottom, #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%)
+      outline: none
+      cursor: pointer

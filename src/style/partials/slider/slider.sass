@@ -1,0 +1,32 @@
+.slider
+  width: 50%
+  position: relative
+  overflow: hidden
+
+  &__slides
+    display: flex
+    border-radius: 3px
+    position: relative
+    left: 0
+
+    &_transition
+      transition: left ease-out 2s
+
+  &__controls
+    display: flex
+    width: 68px
+    justify-content: space-between
+    position: absolute
+    top: 428px
+    left: 209px
+
+    .slider__button
+      border-radius: 50%
+      width: 10px
+      height: 10px
+      background: rgba(0, 0, 0, 0.5)
+      box-shadow: 0 0 4px 0 #ffffff
+      border: 1px solid #000000
+
+      &_active
+        background: $sliderButtonActive
